@@ -25,11 +25,15 @@ public class ServicoDeCep {
 
             BufferedReader buffereReader = new BufferedReader(new InputStreamReader((conexao.getInputStream())));
 
-            String retorno;
-            while ((retorno = buffereReader.readLine()) != null) {
-                System.out.println(retorno);
+            String resposta, stringEmJson = "";
+            while ((resposta = buffereReader.readLine()) != null) {
+                stringEmJson += resposta;
             }
 
+            System.out.println(stringEmJson);
+            //converter string em JSON
+            //converter JSON em Objeto Endereco
+            //retornar Endereco
             conexao.disconnect();
             return new Endereco("", "", "");
         } catch (Exception e) {
