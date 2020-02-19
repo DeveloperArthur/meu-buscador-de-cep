@@ -32,7 +32,7 @@ public class ServicoDeCep {
             }
 
             conexao.disconnect();
-            return new Endereco("teste", "teste", "teste");
+            return new Endereco("", "", "");
         } catch (Exception e) {
             throw new UnknownHostException("SEM INTERNET " + e);
         }

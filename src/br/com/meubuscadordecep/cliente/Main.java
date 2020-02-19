@@ -11,7 +11,10 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String cep = new Scanner(System.in).nextLine();
         Endereco endereco = ServicoDeCep.buscaEnderecoPelo(cep);
-        System.out.println(endereco.toString());
+        System.out.println("Dados do Endereço");
+        System.out.println("Logradouro: "+endereco.getLogradouro());
+        System.out.println("Bairro: "+endereco.getBairro());
+        System.out.println("Localidade: "+endereco.getLocalidade());
     }
 
 }
