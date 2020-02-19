@@ -1,5 +1,6 @@
 package br.com.meubuscadordecep.viacep;
 
+import br.com.meubuscadordecep.Util;
 import br.com.meubuscadordecep.dominio.Endereco;
 
 import java.io.BufferedReader;
@@ -25,16 +26,13 @@ public class ServicoDeCep {
 
             BufferedReader buffereReader = new BufferedReader(new InputStreamReader((conexao.getInputStream())));
 
-            String resposta, stringEmJson = "";
-            while ((resposta = buffereReader.readLine()) != null) {
-                stringEmJson += resposta;
-            }
+            String jsonEmString = Util.converteJsonEmString(buffereReader);
+            System.out.println(jsonEmString);
 
-            System.out.println(stringEmJson);
             //converter string em JSON
             //converter JSON em Objeto Endereco
             //retornar Endereco
-            conexao.disconnect();
+
             return new Endereco("", "", "");
         } catch (Exception e) {
             throw new Exception("Ocorreu um erro inesperado: " + e);
