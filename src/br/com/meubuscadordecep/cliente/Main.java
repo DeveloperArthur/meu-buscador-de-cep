@@ -10,6 +10,10 @@ public class Main {
     public static void main(String[] args) throws Exception {
         String cep = new Scanner(System.in).nextLine();
         Endereco endereco = ServicoDeCep.buscaEnderecoPelo(cep);
+        Main.mostrarDadosNaTela(endereco);
+    }
+
+    public static void mostrarDadosNaTela(Endereco endereco) {
         System.out.println("Dados do Endereço");
         System.out.println("Logradouro: " + endereco.getLogradouro());
         System.out.println("Bairro: " + endereco.getBairro());
