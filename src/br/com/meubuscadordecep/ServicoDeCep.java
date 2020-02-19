@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
 
 public class ServicoDeCep {
     static String webService = "http://viacep.com.br/ws/";
@@ -27,18 +29,13 @@ public class ServicoDeCep {
             while ((retorno = buffereReader.readLine()) != null) {
                 System.out.println(retorno);
             }
-            
-            //JAXBContext jaxbContext = JAXBContext.newInstance(Endereco.class);
-            //Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-            //BufferedReader buffereReader = new BufferedReader(new InputStreamReader((conexao.getInputStream())));
-            //Endereco endereco = (Endereco) jaxbUnmarshaller.unmarshal(buffereReader);
-            
+           
             conexao.disconnect();
             
         }catch(Exception e){
             e.printStackTrace();
         }
         
-        return null;
+        return new Endereco("teste", "teste", "teste");
     }
 }

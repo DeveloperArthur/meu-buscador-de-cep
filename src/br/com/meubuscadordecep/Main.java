@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) throws IOException, JAXBException {
         String cep = new Scanner(System.in).nextLine();
         Endereco endereco = ServicoDeCep.buscaEnderecoPelo(cep);
-        //System.out.println(endereco);
+        System.out.println(endereco.toString());
     }
     
 }
