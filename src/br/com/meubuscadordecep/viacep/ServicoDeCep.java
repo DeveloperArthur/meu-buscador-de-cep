@@ -2,6 +2,7 @@ package br.com.meubuscadordecep.viacep;
 
 import br.com.meubuscadordecep.Util;
 import br.com.meubuscadordecep.dominio.Endereco;
+import com.google.gson.Gson;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -24,16 +25,13 @@ public class ServicoDeCep {
             if (conexao.getResponseCode() != codigoSucesso)
                 throw new RuntimeException("HTTP error code : " + conexao.getResponseCode());
 
-            BufferedReader buffereReader = new BufferedReader(new InputStreamReader((conexao.getInputStream())));
+            BufferedReader resposta = new BufferedReader(new InputStreamReader((conexao.getInputStream())));
+            String jsonEmString = Util.converteJsonEmString(resposta);
 
-            String jsonEmString = Util.converteJsonEmString(buffereReader);
-            System.out.println(jsonEmString);
+            Gson gson = new Gson();
+            Endereco endereco = gson.fromJson(jsonEmString, Endereco.class);
 
-            //converter string em JSON
-            //converter JSON em Objeto Endereco
-            //retornar Endereco
-
-            return new Endereco("", "", "");
+            return endereco;
         } catch (Exception e) {
             throw new Exception("Ocorreu um erro inesperado: " + e);
         }
