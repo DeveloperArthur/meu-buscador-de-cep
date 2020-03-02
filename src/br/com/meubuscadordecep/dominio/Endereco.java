@@ -5,12 +5,6 @@ public class Endereco {
     String bairro;
     String localidade;
 
-    public Endereco(String logradouro, String bairro, String localidade) {
-        this.logradouro = logradouro;
-        this.bairro = bairro;
-        this.localidade = localidade;
-    }
-
     public String getLogradouro() {
         return logradouro;
     }
