@@ -1,11 +1,14 @@
-# meu-buscador-de-cep
+# Meu Buscador de CEP
 Aplicação Java que conecta com webservice e busca dados de Endereço referente ao CEP fornecido pelo usuário. 
 
-**Tecnologias utilizadas**
+
+# Tecnologias utilizadas
+
 
 Java 8, Swing e API viacep
 
-**Manual do sistema**
+
+# Manual do sistema
 
 Baixe o projeto 
 
