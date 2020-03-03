@@ -7,7 +7,7 @@ Aplicação Java que conecta com webservice e busca dados de Endereço referente
 Baixe o projeto, abra o CMD, vá até a pasta dist:
 
 ```
-cd C:\Users\#YOUR_USER#\Download\meu-buscador-de-cep-master\dist'
+cd Download\meu-buscador-de-cep-master\dist'
 ```
 
 e execute este comando 
