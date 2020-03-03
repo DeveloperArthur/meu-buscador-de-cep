@@ -33,7 +33,7 @@ public class ServicoDeCep {
 
             return endereco;
         } catch (Exception e) {
-            throw new Exception("Ocorreu um erro inesperado: " + e);
+            throw new Exception("CEP Invalido: " + e);
         }
     }
 }

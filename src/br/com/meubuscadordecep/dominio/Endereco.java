@@ -16,4 +16,9 @@ public class Endereco {
     public String getLocalidade() {
         return localidade;
     }
+
+    @Override
+    public String toString() {
+        return "Endereco{" + "logradouro=" + logradouro + ", bairro=" + bairro + ", localidade=" + localidade + '}';
+    }
 }

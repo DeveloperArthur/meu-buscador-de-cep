@@ -1,4 +1,4 @@
-package br.com.meubuscadordecep.cliente;
+/*package br.com.meubuscadordecep.cliente;
 
 import br.com.meubuscadordecep.dominio.Endereco;
 import br.com.meubuscadordecep.viacep.ServicoDeCep;
@@ -21,3 +21,4 @@ public class Main {
     }
 
 }
+*/
