@@ -4,15 +4,18 @@ Aplicação Java que conecta com webservice e busca dados de Endereço referente
 
 **Manual do sistema**
 
-Baixe o projeto, abra o CMD, vá até a pasta dist:
+Baixe o projeto, abra o CMD 
 
+Vá até a pasta dist e execute o arquivo ``` Meu-Buscador-de-CEP.jar ```
+
+OU
+Extraia o projeto
+Abra o CMD e execute este comando
 ```
-cd Downloads\meu-buscador-de-cep-master\dist
+cd Downloads\meu-buscador-de-cep-master\meu-buscador-de-cep-master\dist
 ```
 
-e execute este comando 
+depois execute este comando 
 ```
 java -jar Meu-Buscador-de-CEP.jar
 ```
-
-ou vá até a pasta dist e execute o arquivo ``` Meu-Buscador-de-CEP.jar ```
