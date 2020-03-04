@@ -3,9 +3,6 @@ package br.com.meubuscadordecep.view;
 import br.com.meubuscadordecep.dominio.Endereco;
 import br.com.meubuscadordecep.viacep.ServicoDeCep;
 import java.awt.Color;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JLabel;
 
 public class Principal extends javax.swing.JFrame {
 
@@ -21,7 +18,6 @@ public class Principal extends javax.swing.JFrame {
         nomeDaAplicacao = new javax.swing.JLabel();
         separador = new javax.swing.JSeparator();
         labelCEP = new javax.swing.JLabel();
-        imputCEP = new javax.swing.JTextField();
         botao = new javax.swing.JButton();
         labelLogradouro = new javax.swing.JLabel();
         labelBairro = new javax.swing.JLabel();
@@ -33,6 +29,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         respostaLocalidade = new javax.swing.JLabel();
         erro = new javax.swing.JLabel();
+        imputCEP = new javax.swing.JFormattedTextField();
 
         jLabel2.setText("jLabel2");
 
@@ -43,12 +40,6 @@ public class Principal extends javax.swing.JFrame {
         separador.setBackground(new java.awt.Color(255, 255, 255));
 
         labelCEP.setText("Digite seu CEP");
-
-        imputCEP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                imputCEPActionPerformed(evt);
-            }
-        });
 
         botao.setText("Buscar CEP");
         botao.addActionListener(new java.awt.event.ActionListener() {
@@ -63,6 +54,12 @@ public class Principal extends javax.swing.JFrame {
 
         labelLocalidade.setText("Localidade:");
 
+        try {
+            imputCEP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -71,16 +68,10 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(nomeDaAplicacao))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(67, 67, 67)
                         .addComponent(labelCEP)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(imputCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(botao))
+                        .addGap(4, 4, 4)
+                        .addComponent(imputCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,8 +91,14 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(jLabel3))
                             .addComponent(jLabel6)
                             .addComponent(jLabel1)
-                            .addComponent(erro))))
-                .addContainerGap(76, Short.MAX_VALUE))
+                            .addComponent(erro)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(nomeDaAplicacao))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(botao)))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,16 +138,8 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void imputCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imputCEPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_imputCEPActionPerformed
-
     private void botaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoActionPerformed
-        erro.setText("");
-        resultadoLogradouro.setText("");
-        respostaBairro.setText("");
-        respostaLocalidade.setText("");
-        
+        inicializarVariaveis();
         try {
             buscarEndereco(imputCEP.getText());
         } catch (Exception ex) {
@@ -159,6 +148,13 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botaoActionPerformed
 
+    public void inicializarVariaveis(){
+        erro.setText("");
+        resultadoLogradouro.setText("");
+        respostaBairro.setText("");
+        respostaLocalidade.setText("");
+    }
+    
     public void buscarEndereco(String cep) throws Exception {
         Endereco endereco = ServicoDeCep.buscaEnderecoPelo(cep);
         resultadoLogradouro.setText(endereco.getLogradouro());
@@ -201,7 +197,7 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botao;
     private javax.swing.JLabel erro;
-    private javax.swing.JTextField imputCEP;
+    private javax.swing.JFormattedTextField imputCEP;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

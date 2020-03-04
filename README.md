@@ -1,4 +1,4 @@
-# Meu Buscador de CEP
+﻿# Meu Buscador de CEP
 Aplicação Java que conecta com webservice e busca dados de Endereço referente ao CEP fornecido pelo usuário. 
 
 

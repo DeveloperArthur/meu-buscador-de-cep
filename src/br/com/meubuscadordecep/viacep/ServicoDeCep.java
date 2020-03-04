@@ -30,10 +30,13 @@ public class ServicoDeCep {
 
             Gson gson = new Gson();
             Endereco endereco = gson.fromJson(jsonEmString, Endereco.class);
-
+            
+            if(endereco.getLogradouro() == null)
+                throw new IllegalArgumentException("CEP Inexistente");
+            
             return endereco;
         } catch (Exception e) {
-            throw new Exception("CEP Invalido: " + e);
+            throw new Exception("ERRO: " + e);
         }
     }
 }
