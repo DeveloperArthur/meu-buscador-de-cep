@@ -10,14 +10,7 @@ Java 8, Swing e API viacep
 
 # Manual do sistema
 
-Baixe o projeto 
-
-Vá até a pasta dist e execute o arquivo 
-``` Meu-Buscador-de-CEP.jar ```
-
-
-OU
-
+Realize o download do projeto 
 
 Extraia o projeto
 
@@ -26,7 +19,7 @@ Abra o CMD e execute este comando
 cd Downloads\meu-buscador-de-cep-master\meu-buscador-de-cep-master\dist
 ```
 
-depois execute este comando 
+em seguida execute este comando 
 ```
 java -jar Meu-Buscador-de-CEP.jar
 ```
