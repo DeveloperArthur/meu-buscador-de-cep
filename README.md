@@ -14,9 +14,9 @@ Realize o download do projeto
 
 Extraia o projeto
 
-Abra o CMD e execute este comando
+Abra o CMD, navegue até a pasta 
 ```
-cd Downloads\meu-buscador-de-cep-master\meu-buscador-de-cep-master\dist
+\dist
 ```
 
 em seguida execute este comando 
