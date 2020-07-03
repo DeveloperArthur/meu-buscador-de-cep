@@ -16,7 +16,7 @@ Extraia o projeto
 
 Abra o CMD, navegue até a pasta 
 ```
-\dist
+cd %PATH_DO_PROJETO%\dist
 ```
 
 em seguida execute este comando 
